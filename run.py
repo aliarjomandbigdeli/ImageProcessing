@@ -20,6 +20,8 @@ def main():
     height, width, channels = img.shape
     resize_image(file_name, math.floor(width / 2), height)
 
+    show_image_edges(file_name)
+
     cv2.waitKey(0)
     cv2.destroyAllWindows()
 
@@ -60,6 +62,12 @@ def resize_image(file_name, width, height):
     img = cv2.imread(file_name, 1)
     resize_image = cv2.resize(img, (width, height))
     cv2.imshow("resize image 2", resize_image)
+
+
+def show_image_edges(file_name):
+    img = cv2.imread(file_name, 1)
+    edges = cv2.Canny(img, 100, 70)
+    cv2.imshow("Canny edges", edges)
 
 
 if __name__ == '__main__': main()
