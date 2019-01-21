@@ -2,6 +2,11 @@ import math
 
 import cv2
 
+"""
+.. sectionauthor:: Ali ArjomandBigdeli  <https://github.com/aliarjomandbigdeli>
+.. since:: 1/21/2019
+"""
+
 
 def main():
     file_name = "test.jpg"
@@ -21,6 +26,8 @@ def main():
     resize_image(file_name, math.floor(width / 2), height)
 
     show_image_edges(file_name)
+
+    segment_image(file_name)
 
     cv2.waitKey(0)
     cv2.destroyAllWindows()
@@ -70,4 +77,11 @@ def show_image_edges(file_name):
     cv2.imshow("Canny edges", edges)
 
 
-if __name__ == '__main__': main()
+def segment_image(file_name):
+    img = cv2.imread(file_name, 0)
+    thresh_adapt = cv2.adaptiveThreshold(img, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, 115, 1)
+    cv2.imshow("segment by adaptive threshold", thresh_adapt)
+
+
+if __name__ == '__main__':
+    main()
