@@ -31,6 +31,8 @@ def main():
 
     segment_image(file_name)
 
+    face_detection(file_name)
+
     cv2.waitKey(0)
     cv2.destroyAllWindows()
 
@@ -90,6 +92,21 @@ def segment_image(file_name):
     img = cv2.imread(file_name, 0)
     thresh_adapt = cv2.adaptiveThreshold(img, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, 115, 1)
     cv2.imshow("segment by adaptive threshold", thresh_adapt)
+
+
+def face_detection(file_name):
+    img = cv2.imread(file_name, 1)
+    gray = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
+    path = "data/haarcascade_frontalface_default.xml"
+
+    face_cascade = cv2.CascadeClassifier(path)
+    faces = face_cascade.detectMultiScale(gray, scaleFactor=1.10, minNeighbors=5, minSize=(40, 40))
+    print("number of faces that are detected: {}".format(len(faces)))
+
+    for (x, y, w, h) in faces:
+        cv2.rectangle(img, (x, y), (x + w, y + h), (0, 255, 0), 2)
+
+    cv2.imshow("face detection", img)
 
 
 if __name__ == '__main__':
