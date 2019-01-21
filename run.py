@@ -77,10 +77,6 @@ def gaussian_blur_gray_scale_image(file_name):
 
 
 def rotate_image(file_name, angel):
-    # img = cv2.imread(file_name, 1)
-    # rotated = cv2.rotate(img, angel)
-    # cv2.imshow('rotated image', rotated)
-
     img = cv2.imread(file_name, 1)
     M = cv2.getRotationMatrix2D((img.shape[1] / 2, img.shape[0] / 2), angel, 1)
     rotated = cv2.warpAffine(img, M, (img.shape[1], img.shape[0]))
