@@ -17,6 +17,8 @@ def main():
 
     show_gray_image(file_name)
 
+    gaussian_blur_gray_scale_image(file_name)
+
     rotate_image(file_name, 90)
 
     half_width_image(file_name)
@@ -50,6 +52,13 @@ def show_gray_image(file_name):
     gray = cv2.cvtColor(color, cv2.COLOR_RGB2GRAY)
     cv2.imwrite("gray.jpg", gray)
     cv2.imshow("gray scale", gray)
+
+
+def gaussian_blur_gray_scale_image(file_name):
+    color = cv2.imread(file_name, 1)
+    gray = cv2.cvtColor(color, cv2.COLOR_RGB2GRAY)
+    blur = cv2.GaussianBlur(gray, (5, 5), 0)
+    cv2.imshow("gaussian blur", blur)
 
 
 def rotate_image(file_name, angel):
