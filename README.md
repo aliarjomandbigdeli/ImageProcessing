@@ -19,14 +19,15 @@ Windows:
 Download numpy at [numpy](https://www.lfd.uci.edu/~gohlke/pythonlibs/#numpy) and openCV at [opencv](https://www.lfd.uci.edu/~gohlke/pythonlibs/#opencv).
 Note : both are the same version.
 Run command prompt(run it as administrator) in directory you download the files, follow the instructions blew:
-'pip install "numpy-...."'
+
+'pip install numpy-....'
 'pip install opencv-python....'
 
 Mac OS X:
 Open terminal, follow the instructions blew:
 'sudo xcodebuild -licence'
 'sudo xcode -select --install'
-'ruby -e "$(curl -fsSl https://raw.githubusercontent.com/Homebrew/install/master/install)"'
+'ruby -e $(curl -fsSl https://raw.githubusercontent.com/Homebrew/install/master/install)'
 'brew update'
 'brew install python3'
 'brew linkapps python3'
