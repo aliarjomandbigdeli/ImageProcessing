@@ -20,20 +20,28 @@ Download numpy at [numpy](https://www.lfd.uci.edu/~gohlke/pythonlibs/#numpy) and
 Note : both are the same version.
 Run command prompt(run it as administrator) in directory you download the files, follow the instructions blew:
 
-'pip install numpy-....'
-'pip install opencv-python....'
+`pip install "numpy-...."`
+
+`pip install opencv-python....`
 
 Mac OS X:
 Open terminal, follow the instructions blew:
-'sudo xcodebuild -licence'
-'sudo xcode -select --install'
-'ruby -e $(curl -fsSl https://raw.githubusercontent.com/Homebrew/install/master/install)'
-'brew update'
-'brew install python3'
-'brew linkapps python3'
-'brew tap homebrew/science'
-'brew install opencv3 --without-python --with-python3'
+`sudo xcodebuild -licence`
+
+`sudo xcode -select --install`
+
+`ruby -e "$(curl -fsSl https://raw.githubusercontent.com/Homebrew/install/master/install)"`
+
+`brew update`
+
+`brew install python3`
+
+`brew linkapps python3`
+
+`brew tap homebrew/science`
+
+`brew install opencv3 --without-python --with-python3`
 
 pycharm users:
-After install python, you can write 'import cv2' and then press 'ALT'+'Enter' and select install package.
+After install python, you can write `import cv2` and then press `ALT`+`Enter` and select install package.
 
