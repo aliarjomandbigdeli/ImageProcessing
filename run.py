@@ -10,7 +10,7 @@ import numpy as np
 
 def main():
     file_name = "test.jpg"
-    video_file_name = "test.avi"
+    video_file_name = "8.mp4"
 
     read_and_show_image(file_name)
 
@@ -20,7 +20,7 @@ def main():
 
     gaussian_blur_gray_scale_image(file_name)
 
-    rotate_image(file_name, 90)
+    rotate_image(file_name, -90)
 
     half_width_image(file_name)
 
@@ -78,9 +78,11 @@ def gaussian_blur_gray_scale_image(file_name):
 
 def rotate_image(file_name, angel):
     img = cv2.imread(file_name, 1)
+    rotated_img = cv2.rotate(img, cv2.ROTATE_90_COUNTERCLOCKWISE)
     M = cv2.getRotationMatrix2D((img.shape[1] / 2, img.shape[0] / 2), angel, 1)
     rotated = cv2.warpAffine(img, M, (img.shape[1], img.shape[0]))
     cv2.imshow("rotated", rotated)
+    cv2.imshow("rotated_img", rotated_img)
 
 
 def half_width_image(file_name):
@@ -107,7 +109,7 @@ def segment_image(file_name):
     ret, thresh = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)
 
     # noise removal
-    kernel = np.ones((3, 3), np.uint8)
+    kernel = np.ones((7, 7), np.uint8)
     opening = cv2.morphologyEx(thresh, cv2.MORPH_OPEN, kernel, iterations=2)
 
     # sure background area
@@ -115,7 +117,8 @@ def segment_image(file_name):
 
     # Finding sure foreground area
     dist_transform = cv2.distanceTransform(opening, cv2.DIST_L2, 5)
-    ret, sure_fg = cv2.threshold(dist_transform, 0.7 * dist_transform.max(), 255, 0)
+    ret, sure_fg = cv2.threshold(dist_transform, 0.1 * dist_transform.max(), 255, 0)
+    # ret, sure_fg = cv2.threshold(dist_transform, 0.7 * dist_transform.max(), 255, 0)
 
     # Finding unknown region
     sure_fg = np.uint8(sure_fg)
@@ -140,7 +143,7 @@ def face_detection(file_name):
     path = "data/haarcascade_frontalface_default.xml"
 
     face_cascade = cv2.CascadeClassifier(path)
-    faces = face_cascade.detectMultiScale(gray, scaleFactor=1.10, minNeighbors=5, minSize=(40, 40))
+    faces = face_cascade.detectMultiScale(gray, scaleFactor=1.30, minNeighbors=5, minSize=(40, 40))
     print("number of faces that are detected: {}".format(len(faces)))
 
     for (x, y, w, h) in faces:
