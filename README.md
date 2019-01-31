@@ -15,7 +15,8 @@ Face detection:
 ## How to use install OpenCV
 At first, you should install python, you can download at [python page](https://python.org/). Now how to install OpenCV
 
-Windows:
+##### Windows:
+
 Download numpy at [numpy](https://www.lfd.uci.edu/~gohlke/pythonlibs/#numpy) and openCV at [opencv](https://www.lfd.uci.edu/~gohlke/pythonlibs/#opencv).
 Note : both are the same version.
 Run command prompt(run it as administrator) in directory you download the files, follow the instructions blew:
@@ -24,7 +25,8 @@ Run command prompt(run it as administrator) in directory you download the files,
 
 `pip install opencv-python....`
 
-Mac OS X:
+##### Mac OS X:
+
 Open terminal, follow the instructions blew:
 `sudo xcodebuild -licence`
 
@@ -42,6 +44,7 @@ Open terminal, follow the instructions blew:
 
 `brew install opencv3 --without-python --with-python3`
 
-pycharm users:
+##### PyCharm users:
+
 After install python, you can write `import cv2` and then press `ALT`+`Enter` and select install package.
 
