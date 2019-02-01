@@ -18,14 +18,14 @@ At first, you should install python, you can download it at [python page](https:
 
 Download numpy at [numpy](https://www.lfd.uci.edu/~gohlke/pythonlibs/#numpy) and openCV at [opencv](https://www.lfd.uci.edu/~gohlke/pythonlibs/#opencv).
 Note : both are the same version.
-Run command prompt(run it as administrator) in directory you download the files, follow the instructions blew:
+Run command prompt(run it as administrator) in directory you download the files, follow the instructions below:
 
 `pip install "numpy-...."`
 
 `pip install opencv-python....`
 
 ##### Mac OS X:
-Open terminal, follow the instructions blew:
+Open terminal, follow the instructions below:
 
 `sudo xcodebuild -licence`
 
