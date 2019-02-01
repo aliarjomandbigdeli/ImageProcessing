@@ -7,14 +7,14 @@ In this project, I implemented some of the basic concepts in image processing us
 - segmentation
 - face detection
 
-## some of the result
+## some of the results
 Edge detection:
 ![picture](images/edges.png)
 Face detection:
 ![picture](images/face.png)
-## How to use install OpenCV
+## How to install OpenCV
 ##### Windows:
-At first, you should install python, you can download at [python page](https://python.org/). Now how to install OpenCV:
+At first, you should install python, you can download it at [python page](https://python.org/). Now how to install OpenCV:
 
 Download numpy at [numpy](https://www.lfd.uci.edu/~gohlke/pythonlibs/#numpy) and openCV at [opencv](https://www.lfd.uci.edu/~gohlke/pythonlibs/#opencv).
 Note : both are the same version.
@@ -26,6 +26,7 @@ Run command prompt(run it as administrator) in directory you download the files,
 
 ##### Mac OS X:
 Open terminal, follow the instructions blew:
+
 `sudo xcodebuild -licence`
 
 `sudo xcode -select --install`
